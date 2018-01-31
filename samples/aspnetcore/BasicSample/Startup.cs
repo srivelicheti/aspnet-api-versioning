@@ -38,7 +38,11 @@
         {
             loggerFactory.AddConsole( Configuration.GetSection( "Logging" ) );
             loggerFactory.AddDebug();
-            app.UseMvc();
+           //app.UseMvc();
+            app.Map("/test", appBuilder =>
+            {
+                appBuilder.UseMvc();
+            });
         }
     }
 }
